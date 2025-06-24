@@ -86,6 +86,20 @@
         <button id="enterprise-button" class="mt-4 w-full bg-gray-800 text-white py-2 rounded hover:bg-gray-900">Subscribe</button>
       </div>
     </div>
+
+<!-- AI Rental Price Optimizer Plan -->
+<div class="bg-white p-6 rounded-xl shadow border-2 border-yellow-500">
+  <h3 class="text-xl font-bold mb-2">AI Rental Price Optimizer</h3>
+  <p class="text-lg font-semibold">$600/month</p>
+  <ul class="mt-4 text-sm space-y-1">
+    <li>✔️ Dynamic pricing API for STR & long-term rentals</li>
+    <li>✔️ Rent Estimator widget for property listings</li>
+    <li>✔️ AI Chatbot to justify rent to tenants</li>
+    <li>✔️ Market demand & seasonality insights</li>
+    <li>✔️ Everything in Business Plan</li>
+  </ul>
+  <button id="optimizer-button" class="mt-4 w-full bg-yellow-500 text-white py-2 rounded hover:bg-yellow-600">Subscribe</button>
+</div>
   </section>
 
   <!-- CTA -->
@@ -119,11 +133,12 @@
     document.addEventListener("DOMContentLoaded", function () {
       const stripe = Stripe("pk_test_51Rb3NQPv6wMc7rs7smbTQKHS1Jl74JaRfdDDTXkfedKGcjI60sw0d6AriWLZcZfv9yepusen85IXqyLUfMEUsMFP00OZN7ndnA");
 
-      const plans = {
-        "pro-button": "price_1Rb3S7Pv6wMc7rs7AKlLlasD",
-        "business-button": "price_1Rb3TePv6wMc7rs7gCb2GYYz",
-        "enterprise-button": "price_1Rb4qwPv6wMc7rs7SVmgCsKE"
-      };
+const plans = {
+  "pro-button": "price_1Rb3S7Pv6wMc7rs7AKlLlasD",
+  "business-button": "price_1Rb3TePv6wMc7rs7gCb2GYYz",
+  "enterprise-button": "price_1Rb4qwPv6wMc7rs7SVmgCsKE",
+  "optimizer-button": "price_1RdfHxPv6wMc7rs7qchbQ4Eo"
+};
 
       for (const [btnId, priceId] of Object.entries(plans)) {
         const btn = document.getElementById(btnId);

@@ -5,7 +5,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="icon" href="logo.png" type="image/x-icon">
   <title>RentalBoost AI</title>
-  <script src="https://js.stripe.com/v3/"></script>
   <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
 </head>
 <body class="bg-white text-gray-800 font-sans">
@@ -57,7 +56,6 @@
           <li>✔️ Heatmaps & market trends</li>
           <li>✔️ Rent comp reports</li>
         </ul>
-        <button id="pro-button" class="mt-4 w-full bg-blue-600 text-white py-2 rounded hover:bg-blue-700">Subscribe</button>
       </div>
 
       <!-- Business Plan -->
@@ -70,7 +68,6 @@
           <li>✔️ Multi-property dashboard</li>
           <li>✔️ Priority support</li>
         </ul>
-        <button id="business-button" class="mt-4 w-full bg-purple-600 text-white py-2 rounded hover:bg-purple-700">Subscribe</button>
       </div>
 
       <!-- Enterprise Plan -->
@@ -84,90 +81,26 @@
           <li>✔️ Custom dashboards</li>
           <li>✔️ API access</li>
         </ul>
-        <button id="enterprise-button" class="mt-4 w-full bg-gray-800 text-white py-2 rounded hover:bg-gray-900">Subscribe</button>
       </div>
     </div>
   </section>
 
-<!-- Optimizer Section -->
-<section class="py-12 px-6 bg-yellow-50 text-center">
-  <h2 class="text-2xl font-semibold mb-4">Upgrade to AI-Powered Pricing</h2>
-  <p class="text-lg mb-6">Take your rental business to the next level with real-time, automated pricing recommendations.</p>
+  <!-- Optimizer Section -->
+  <section class="py-12 px-6 bg-yellow-50 text-center">
+    <h2 class="text-2xl font-semibold mb-4">Upgrade to AI-Powered Pricing</h2>
+    <p class="text-lg mb-6">Take your rental business to the next level with real-time, automated pricing recommendations.</p>
 
-  <div class="max-w-3xl mx-auto bg-white p-8 rounded-xl shadow border-2 border-yellow-500">
-    <h3 class="text-2xl font-bold mb-2">AI Rental Price Optimizer</h3>
-    <p class="text-xl font-semibold mb-4">$600/month</p>
-    <ul class="text-left list-disc list-inside text-md space-y-2 mb-6">
-      <li>✔️ Dynamic pricing API for Airbnb & long-term rentals</li>
-      <li>✔️ Rent Estimator widget for your listings</li>
-      <li>✔️ AI Chatbot to justify rent to tenants</li>
-      <li>✔️ Market demand, comps & seasonality insights</li>
-      <li>✔️ Includes all features from Business Plan</li>
-    </ul>
-    <button id="optimizer-button" class="w-full bg-yellow-500 text-white py-3 rounded hover:bg-yellow-600">Subscribe Now</button>
-  </div>
-</section>
-
-  <!-- CTA -->
-  <section class="py-16 px-6 text-center">
-    <h2 class="text-2xl font-bold mb-4">Be First. Get Insights Before Anyone Else.</h2>
-    <p class="mb-6">Limited to the first 20 signups — get 50% off your first 3 months.</p>
-    <a href="https://docs.google.com/forms/d/e/1FAIpQLSePwQGqFC8S00v1MXAJc8ZewVrq2JnRqtnXOp7PtNEK5FOniw/viewform" class="bg-blue-600 text-white py-3 px-6 rounded-lg hover:bg-blue-700">Join Early Access</a>
+    <div class="max-w-3xl mx-auto bg-white p-8 rounded-xl shadow border-2 border-yellow-500">
+      <h3 class="text-2xl font-bold mb-2">AI Rental Price Optimizer</h3>
+      <p class="text-xl font-semibold mb-4">$600/month</p>
+      <ul class="text-left list-disc list-inside text-md space-y-2 mb-6">
+        <li>✔️ Dynamic pricing API for Airbnb & long-term rentals</li>
+        <li>✔️ Rent Estimator widget for your listings</li>
+        <li>✔️ AI Chatbot to justify rent to tenants</li>
+        <li>✔️ Market demand, comps & seasonality insights</li>
+        <li>✔️ Includes all features from Business Plan</li>
+      </ul>
+    </div>
   </section>
-
-  <!-- Terms Link -->
-  <section class="text-center py-10 bg-white text-sm">
-    <p class="mb-2">📄 <a href="https://drive.google.com/drive/home?dmr=1&ec=wgc-drive-hero-goto" class="text-blue-600 underline">Download Terms & Conditions (PDF)</a></p>
-  </section>
-
-  <!-- Footer -->
-  <footer class="text-center py-8 text-sm text-gray-500">
-    © 2025 RentalBoost AI — Built for smarter rental investors
-
-    <p class="mt-4 text-sm">
-      🔁 Looking for client lead generation instead? Check out:
-      <a href="https://realtorboostsite4.netlify.app/" class="text-blue-600 underline">RealtorBoost AI</a>
-    </p>
-
-    <p class="mt-2 text-sm">
-      📚 Want to launch your own client-getting agency? Learn more at:
-      <a href="https://tanyed640.github.io/client-systems-academy/" class="text-blue-600 underline">Client Systems Academy</a>
-    </p>
-  </footer>
-
- <script>
-  document.addEventListener("DOMContentLoaded", function () {
-    const stripe = Stripe("pk_test_51Rb3NQPv6wMc7rs7smbTQKHS1Jl74JaRfdDDTXkfedKGcjI60sw0d6AriWLZcZfv9yepusen85IXqyLUfMEUsMFP00OZN7ndnA");
-
-    const plans = {
-      "pro-button": "price_1Rb3S7Pv6wMc7rs7AKlLlasD",
-      "business-button": "price_1Rb3TePv6wMc7rs7gCb2GYYz",
-      "enterprise-button": "price_1Rb4qwPv6wMc7rs7SVmgCsKE",
-      "optimizer-button": "price_1RdfHxPv6wMc7rs7qchbQ4Eo"
-    };
-
-    for (const [btnId, priceId] of Object.entries(plans)) {
-      const btn = document.getElementById(btnId);
-      if (btn) {
-        btn.addEventListener("click", () => {
-          console.log("Redirecting to Stripe checkout for:", priceId);
-          stripe.redirectToCheckout({
-            lineItems: [{ price: priceId, quantity: 1 }],
-            mode: "subscription",
-            successUrl: window.location.origin + "/success.html",
-            cancelUrl: window.location.origin + "/cancel.html"
-          }).then(function (result) {
-            if (result.error) {
-              console.error("Stripe error:", result.error.message);
-              alert("Stripe Error: " + result.error.message);
-            }
-          });
-        });
-      }
-    }
-  });
-</script>
 </body>
 </html>
-
-

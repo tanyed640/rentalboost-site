@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="icon" href="logo.png" type="image/x-icon">
   <title>RentalBoost AI</title>
-  <script async src="https://js.stripe.com/v3/"></script>
+  <script src="https://js.stripe.com/v3/"></script>
   <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
 </head>
 <body class="bg-white text-gray-800 font-sans">
@@ -135,32 +135,39 @@
     </p>
   </footer>
 
-  <script>
-    document.addEventListener("DOMContentLoaded", function () {
-      const stripe = Stripe("pk_test_51Rb3NQPv6wMc7rs7smbTQKHS1Jl74JaRfdDDTXkfedKGcjI60sw0d6AriWLZcZfv9yepusen85IXqyLUfMEUsMFP00OZN7ndnA");
+ <script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const stripe = Stripe("pk_test_51Rb3NQPv6wMc7rs7smbTQKHS1Jl74JaRfdDDTXkfedKGcjI60sw0d6AriWLZcZfv9yepusen85IXqyLUfMEUsMFP00OZN7ndnA");
 
-const plans = {
-  "pro-button": "price_1Rb3S7Pv6wMc7rs7AKlLlasD",
-  "business-button": "price_1Rb3TePv6wMc7rs7gCb2GYYz",
-  "enterprise-button": "price_1Rb4qwPv6wMc7rs7SVmgCsKE",
-  "optimizer-button": "price_1RdfHxPv6wMc7rs7qchbQ4Eo"
-};
+    const plans = {
+      "pro-button": "price_1Rb3S7Pv6wMc7rs7AKlLlasD",
+      "business-button": "price_1Rb3TePv6wMc7rs7gCb2GYYz",
+      "enterprise-button": "price_1Rb4qwPv6wMc7rs7SVmgCsKE",
+      "optimizer-button": "price_1RdfHxPv6wMc7rs7qchbQ4Eo"
+    };
 
-      for (const [btnId, priceId] of Object.entries(plans)) {
-        const btn = document.getElementById(btnId);
-        if (btn) {
-          btn.addEventListener("click", () => {
-            stripe.redirectToCheckout({
-              lineItems: [{ price: priceId, quantity: 1 }],
-              mode: "subscription",
-              successUrl: window.location.origin + "/success.html",
-              cancelUrl: window.location.origin + "/cancel.html"
-            });
+    for (const [btnId, priceId] of Object.entries(plans)) {
+      const btn = document.getElementById(btnId);
+      if (btn) {
+        btn.addEventListener("click", () => {
+          console.log("Redirecting to Stripe checkout for:", priceId);
+          stripe.redirectToCheckout({
+            lineItems: [{ price: priceId, quantity: 1 }],
+            mode: "subscription",
+            successUrl: window.location.origin + "/success.html",
+            cancelUrl: window.location.origin + "/cancel.html"
+          }).then(function (result) {
+            if (result.error) {
+              console.error("Stripe error:", result.error.message);
+              alert("Stripe Error: " + result.error.message);
+            }
           });
-        }
+        });
       }
-    });
-  </script>
+    }
+  });
+</script>
 </body>
 </html>
+
 
